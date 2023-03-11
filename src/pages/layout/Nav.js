@@ -9,7 +9,7 @@ const NavList = styled.ul`
   text-align: center;
   background-color: gray;
   margin: 0;
-  padding: 0;
+  padding: 0 5rem;
 `;
 
 const NavItem = styled.li`
@@ -18,6 +18,11 @@ const NavItem = styled.li`
 
 const NavLink = styled(Link)`
   text-decoration: none;
+  color: black;
+
+  :hover {
+    color: darkred;
+  }
 `;
 
 const Nav = () => {

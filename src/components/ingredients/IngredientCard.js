@@ -3,18 +3,24 @@ import styled from "styled-components";
 import IngredientModal from "./IngredientModal";
 
 const Card = styled.div`
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   padding: 0.5rem;
-  border: 3px solid red;
+  border: 1px solid lightgray;
   max-width: 100%;
   cursor: pointer;
   text-align: center;
   font-weight: bold;
+  box-shadow: 0px 0px 10px 0px lightgray;
+
+  :hover {
+    box-shadow: 0px 0px 10px 0px gray;
+    transform: scale(1.05);
+  }
 `;
 
 const Picture = styled.img`
-  border: 3px solid #d3d3d3;
-  border-radius: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 0.75rem;
   aspect-ratio: 1/1;
   height: 100px;
 `;
@@ -23,8 +29,10 @@ const IngredientName = styled.p`
   margin: 0.5rem 1rem;
 `;
 
-const IngredientCard = (data) => {
+const IngredientCard = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const imageUrl = `../../images/${data?.image.toLowerCase()}`;
+  const eggs = "../../images/eggs.jpg";
 
   return (
     <>
@@ -33,8 +41,11 @@ const IngredientCard = (data) => {
           setIsModalOpen(true);
         }}
       >
-        <Picture href={data?.imageUrl} />
-        <IngredientName>{data?.name || "Cheese"}</IngredientName>
+        <Picture
+          src={require("" + data?.image.toLowerCase())}
+          alt={data?.name}
+        />
+        <IngredientName>{data?.name}</IngredientName>
       </Card>
 
       {isModalOpen && (
