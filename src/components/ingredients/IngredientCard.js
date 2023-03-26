@@ -42,7 +42,8 @@ const IngredientCard = ({ data }) => {
         }}
       >
         <Picture
-          src={require("" + data?.image.toLowerCase())}
+          // src={require("" + data?.image.toLowerCase())}
+          src={require("../../images/eggs.jpg")}
           alt={data?.name}
         />
         <IngredientName>{data?.name}</IngredientName>
