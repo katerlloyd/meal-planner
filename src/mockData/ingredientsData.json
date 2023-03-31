@@ -1,7 +1,7 @@
 {
   "ingredients": [
     { "image": "eggs.jpg", "name": "Carrot" },
-    { "image": "../../images/eggs.jpg", "name": "Eggs" },
+    { "image": "eggs.jpg", "name": "Eggs" },
     { "image": "eggs.jpg", "name": "Salt" }
   ]
 }

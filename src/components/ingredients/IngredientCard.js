@@ -31,8 +31,7 @@ const IngredientName = styled.p`
 
 const IngredientCard = ({ data }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const imageUrl = `../../images/${data?.image.toLowerCase()}`;
-  const eggs = "../../images/eggs.jpg";
+  const image = data?.image;
 
   return (
     <>
@@ -41,11 +40,7 @@ const IngredientCard = ({ data }) => {
           setIsModalOpen(true);
         }}
       >
-        <Picture
-          // src={require("" + data?.image.toLowerCase())}
-          src={require("../../images/eggs.jpg")}
-          alt={data?.name}
-        />
+        <Picture src={require("../../images/" + image)} alt={data?.name} />
         <IngredientName>{data?.name}</IngredientName>
       </Card>
 
