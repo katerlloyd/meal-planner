@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import IngredientModal from "./IngredientModal";
+import { useEffect } from "react";
 
 const Card = styled.div`
   border-radius: 0.75rem;
@@ -21,23 +22,34 @@ const Card = styled.div`
 const Picture = styled.img`
   border: 1px solid lightgray;
   border-radius: 0.75rem;
-  aspect-ratio: 1/1;
-  height: 100px;
+  aspect-ratio: 1 / 1;
+  height: 150px;
+  object-fit: cover;
 `;
 
 const IngredientName = styled.p`
   margin: 0.5rem 1rem;
 `;
 
-const IngredientCard = ({ data }) => {
+const IngredientCard = ({ data, isAModalOpen, setIsAModalOpen }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const image = data?.image;
+
+  useEffect(() => {
+    if (isModalOpen) {
+      setIsAModalOpen(true);
+    } else {
+      setIsAModalOpen(false);
+    }
+  }, [isModalOpen]);
 
   return (
     <>
       <Card
         onClick={() => {
-          setIsModalOpen(true);
+          if (!isAModalOpen) {
+            setIsModalOpen(true);
+          }
         }}
       >
         <Picture src={require("../../images/" + image)} alt={data?.name} />

@@ -10,21 +10,24 @@ const Modal = styled.div`
   text-align: center;
   filter: blur(0px) !important;
   background-color: white;
-  border: 3px solid #d3d3d3;
+  border: 2px solid #d3d3d3;
   z-index: 1;
+  box-shadow: 0px 0px 10px 0px lightgray;
 `;
 
 const Picture = styled.img`
-  border: 3px solid #d3d3d3;
+  border: 1px solid #d3d3d3;
   border-radius: 1rem;
-  aspect-ratio: 1/1;
-  height: 200px;
+  aspect-ratio: 1 / 1;
+  height: 250px;
   margin: 1rem;
   cursor: pointer;
+  object-fit: cover;
 `;
 
 const IngredientName = styled.p`
   margin: 1rem;
+  font-weight: bold;
 `;
 
 const ButtonContainer = styled.div`
@@ -33,7 +36,7 @@ const ButtonContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border-top: 3px solid #d3d3d3;
+  border-top: 2px solid #d3d3d3;
   padding: 0.5rem 1rem;
 `;
 
@@ -41,7 +44,7 @@ const CancelButton = styled.button`
   padding: 0.5rem 1rem;
   margin: 0.5rem;
   border-radius: 5px;
-  border: 3px solid black;
+  border: 1px solid black;
   color: black;
   font-weight: bold;
 
@@ -56,7 +59,7 @@ const DeleteButton = styled.button`
   padding: 0.5rem 1rem;
   margin: 0.5rem;
   border-radius: 5px;
-  border: 3px solid red;
+  border: 1px solid red;
   background-color: red;
   color: white;
   font-weight: bold;
@@ -72,7 +75,7 @@ const SaveButton = styled.button`
   padding: 0.5rem 1rem;
   margin: 0.5rem;
   border-radius: 5px;
-  border: 3px solid green;
+  border: 1px solid green;
   background-color: green;
   color: white;
   font-weight: bold;
@@ -87,6 +90,7 @@ const SaveButton = styled.button`
 const IngredientModal = ({ data, isModalOpen, setIsModalOpen }) => {
   const [selectedImageUrl, setSelectedImageUrl] = useState("");
   const [isImageSelectorOpen, setIsImageSelectorOpen] = useState(false);
+  const image = data?.image;
 
   const openImageSelector = () => {
     console.log("open image selector");
@@ -114,7 +118,7 @@ const IngredientModal = ({ data, isModalOpen, setIsModalOpen }) => {
 
   return (
     <Modal>
-      <Picture onClick={openImageSelector()} href={selectedImageUrl} />
+      <Picture src={require("../../images/" + image)} alt={data?.name} />
       <IngredientName>{data?.name}</IngredientName>
       <ButtonContainer>
         <CancelButton
