@@ -7,9 +7,12 @@ const NavList = styled.ul`
   flex-wrap: wrap;
   list-style-type: none;
   text-align: center;
-  background-color: gray;
   margin: 0;
   padding: 0 5rem;
+  box-shadow: 0px 0px 10px 0px lightgray;
+  font-size: 1.1rem;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const NavItem = styled.li`
@@ -21,7 +24,8 @@ const NavLink = styled(Link)`
   color: black;
 
   :hover {
-    color: darkred;
+    color: darkorange;
+    font-weight: bold;
   }
 `;
 

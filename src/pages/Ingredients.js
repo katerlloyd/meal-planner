@@ -34,10 +34,12 @@ const Add = styled.div`
 
 const IngredientsContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
 `;
 
 const Ingredients = () => {
+  const ingredients = data?.ingredients;
   const [isAModalOpen, setIsAModalOpen] = useState(false);
 
   const addIngredient = () => {
@@ -57,7 +59,7 @@ const Ingredients = () => {
         </Add>
       </TitleBar>
       <IngredientsContainer>
-        {data?.ingredients?.map((card, index) => {
+        {ingredients?.map((card, index) => {
           return (
             <IngredientCard
               {...{
