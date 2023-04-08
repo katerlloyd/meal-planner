@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import IngredientModal from "./IngredientModal";
-import { useEffect } from "react";
+import Picture from "./Picture";
 
 const Card = styled.div`
   border-radius: 0.75rem;
@@ -19,21 +19,14 @@ const Card = styled.div`
   }
 `;
 
-const Picture = styled.img`
-  border: 1px solid lightgray;
-  border-radius: 0.75rem;
-  aspect-ratio: 1 / 1;
-  height: 150px;
-  object-fit: cover;
-`;
-
 const IngredientName = styled.p`
   margin: 0.5rem 1rem;
 `;
 
 const IngredientCard = ({ data, isAModalOpen, setIsAModalOpen }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const image = data?.image;
+  const [apiStatus, setApiStatus] = useState({ error: false, loading: false });
+  // const [image, setImage] = useState(require("../../images/placeholder.jpg"));
 
   useEffect(() => {
     if (isModalOpen) {
@@ -42,6 +35,14 @@ const IngredientCard = ({ data, isAModalOpen, setIsAModalOpen }) => {
       setIsAModalOpen(false);
     }
   }, [isModalOpen]);
+
+  // useEffect(() => {
+  //   try {
+  //     setImage(require("../../images/" + data?.image));
+  //   } catch (e) {
+  //     setApiStatus({ ...{ error: true } });
+  //   }
+  // }, [data]);
 
   return (
     <>
@@ -52,7 +53,7 @@ const IngredientCard = ({ data, isAModalOpen, setIsAModalOpen }) => {
           }
         }}
       >
-        <Picture src={require("../../images/" + image)} alt={data?.name} />
+        <Picture {...data} />
         <IngredientName>{data?.name}</IngredientName>
       </Card>
 

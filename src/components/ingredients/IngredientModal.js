@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Picture from "./Picture";
 
 const Modal = styled.div`
   position: absolute;
@@ -15,14 +16,10 @@ const Modal = styled.div`
   box-shadow: 0px 0px 10px 0px lightgray;
 `;
 
-const Picture = styled.img`
-  border: 1px solid #d3d3d3;
-  border-radius: 1rem;
-  aspect-ratio: 1 / 1;
+const StyledPicture = styled(Picture)`
   height: 250px;
   margin: 1rem;
   cursor: pointer;
-  object-fit: cover;
 `;
 
 const IngredientName = styled.p`
@@ -90,7 +87,6 @@ const SaveButton = styled.button`
 const IngredientModal = ({ data, isModalOpen, setIsModalOpen }) => {
   const [selectedImageUrl, setSelectedImageUrl] = useState("");
   const [isImageSelectorOpen, setIsImageSelectorOpen] = useState(false);
-  const image = data?.image;
 
   const openImageSelector = () => {
     console.log("open image selector");
@@ -118,7 +114,7 @@ const IngredientModal = ({ data, isModalOpen, setIsModalOpen }) => {
 
   return (
     <Modal>
-      <Picture src={require("../../images/" + image)} alt={data?.name} />
+      <StyledPicture {...data} />
       <IngredientName>{data?.name}</IngredientName>
       <ButtonContainer>
         <CancelButton
