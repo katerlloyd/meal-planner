@@ -1,0 +1,10 @@
+{
+  "ingredients": [
+    { "image": "carrots.jpg", "name": "Carrot" },
+    { "image": "egg.jpg", "name": "Egg" },
+    { "image": "milk.jpg", "name": "Milk" },
+    { "image": "rice.jpg", "name": "Rice" },
+    { "image": "salt.jpg", "name": "Salt" },
+    { "image": "soy-sauce.jpg", "name": "Soy Sauce" }
+  ]
+}

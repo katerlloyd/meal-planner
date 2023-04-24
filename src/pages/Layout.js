@@ -1,23 +1,20 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import styled from "styled-components";
+import Nav from "./layout/Nav";
+import Footer from "./layout/Footer";
+
+const Margins = styled.div`
+  margin: 0 5rem;
+`;
 
 const Layout = () => {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/recipes">Recipes</Link>
-          </li>
-          <li>
-            <Link to="/ingredients">Ingredients</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <Outlet />
+      <Nav />
+      <Margins>
+        <Outlet />
+      </Margins>
+      <Footer />
     </>
   );
 };
