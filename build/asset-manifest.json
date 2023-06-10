@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/static/js/main.c6b15376.js",
+    "static/media/table.jpg": "/static/media/table.735b09ad1d0fedf1ef9c.jpg",
+    "static/media/default.jpg": "/static/media/default.9cba012fba6dcad9ccbc.jpg",
+    "static/media/rice.jpg": "/static/media/rice.d1fac892968dcc66315d.jpg",
+    "static/media/salt.jpg": "/static/media/salt.e3f5c4336b479eaad928.jpg",
+    "static/media/veggies.jpg": "/static/media/veggies.05d8ef27c7e8360969ab.jpg",
+    "static/media/soy-sauce.jpg": "/static/media/soy-sauce.e85012972aebe6003fd1.jpg",
+    "static/media/milk.jpg": "/static/media/milk.d1393251d5e40c69e6d4.jpg",
+    "static/media/egg.jpg": "/static/media/egg.eb9a95aa970b7c704dcf.jpg",
+    "static/media/carrots.jpg": "/static/media/carrots.7b3d3996fa860e119de5.jpg",
+    "static/media/zucchini.jpg": "/static/media/zucchini.39e60f1c4f63ba24181e.jpg",
+    "index.html": "/index.html",
+    "main.c6b15376.js.map": "/static/js/main.c6b15376.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c6b15376.js"
+  ]
+}

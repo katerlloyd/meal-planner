@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import styled from "styled-components";
 import Error from "./pages/Error";
 import Landing from "./pages/Landing";
 import Layout from "./pages/Layout";
