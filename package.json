@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "webpack --mode production && react-scripts build",
+    "build": "webpack --mode=development",
     "lint": "eslint",
     "start": "webpack-dev-server --mode development && react-scripts start",
     "test": "react-scripts test"
   },
   "dependencies": {
     "firebase": "^9.22.2",
+    "firebase-admin": "^11.9.0",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
